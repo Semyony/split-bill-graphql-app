@@ -5,7 +5,7 @@ const { ApolloServer } = require("apollo-server-express");
 const { typeDefs } = require("./Schema/typeDefs");
 const { resolvers } = require("./Schema/Resolvers");
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 async function startServer() {
   const server = new ApolloServer({ typeDefs, resolvers });
