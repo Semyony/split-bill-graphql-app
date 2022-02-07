@@ -1,0 +1,9 @@
+Queries I should include:
+
+get data
+1. Total quantity for Item   [x]
+2. Total price for Item      [x]
+3. Total price for all Items [x]
+4. Total price for User      [x]
+5. User's split price for Item [x]
+6. Total Split Price for User [x]
