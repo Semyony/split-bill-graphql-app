@@ -3,7 +3,7 @@ const app = express();
 const { ApolloServer } = require("apollo-server-express");
 
 const { typeDefs } = require("./Schema/typeDefs");
-const { resolvers } = require("./Schema/resolvers");
+const { resolvers } = require("./Schema/Resolvers");
 
 const PORT = 8000;
 
@@ -18,5 +18,3 @@ async function startServer() {
 }
 
 startServer();
-
-
