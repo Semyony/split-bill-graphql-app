@@ -1,20 +1,16 @@
-version: "3"
+version: '3.8'
 services:
-  prisma:
-    image: prismagraphql/prisma:1.34
-    restart: always
+  postgres:
+    image: postgres:11
+    restart: "always"
+    expose: 
+      - "5432"
     ports:
-      - "4466:4466"
+      - '5432:5432'
     environment:
-      PRISMA_CONFIG: |
-        port: 4466
-        managementApiSecret: mysecret42
-        databases:
-          default:
-            connector: postgres
-            database: dauu2r46vdn9m2
-            host: ec2-3-212-143-188.compute-1.amazonaws.com
-            port: 5432
-            user: ckjmmmrxzjulxm
-            password: c6a74c886eed8a9686687426ee0f2557d70f91ee9d496562c8cb54241b68ba9b
-            migrations: true
+      - POSTGRES_DB=bill-app
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - "./db/data:/var/lib/postgresql/data"
+      - "./db/init:/docker-entrypoint-initdb.d"

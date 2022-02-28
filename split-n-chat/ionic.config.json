@@ -1,0 +1,7 @@
+{
+  "name": "SplitNChat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
