@@ -3,8 +3,8 @@
 
 install node modules and dependencies.
 ```sh
-//split-bill-graphql-project
+# /split-bill-graphql-project
 npm i
-// Run server-side on localhost
+# Run server-side on localhost
 npm start
 ```
