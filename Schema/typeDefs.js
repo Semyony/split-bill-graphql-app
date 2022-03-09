@@ -32,7 +32,7 @@ const typeDefs = gql`
     total_items: [TotalItem]
   }
 
-  input userid{
+  input userid {
     id: ID
   }
 
@@ -45,6 +45,7 @@ const typeDefs = gql`
     totalPriceByItemIDForUser(item_id: Int, user_id: Int): Float
     allUsers: [UserItems!]!
     allItems: [TotalItem!]!
+    login(first_name: String!, last_name: String!): User
   }
 
   type Mutation {

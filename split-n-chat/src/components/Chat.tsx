@@ -1,4 +1,4 @@
-import './ExploreContainer.css';
+import "./ExploreContainer.css";
 import {
   IonContent,
   IonCard,
@@ -12,19 +12,22 @@ import {
   IonItem,
   IonIcon,
   IonLabel,
-  IonButton
-} from '@ionic/react';
+  IonButton,
+  IonApp,
+} from "@ionic/react";
+
+import "./Chat.css";
+
 interface ContainerProps {
   name: string;
 }
 
 const Chat: React.FC<ContainerProps> = () => {
   return (
-  <IonContent>
-    Chat
-
-  </IonContent>
-  );
+    <div className="chat-feed">
+      
+    </div>
+  )
 };
 
 export default Chat;

@@ -3,8 +3,15 @@ const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
-const { totalQuantityByItemID, totalPriceByItemID, totalPriceForAll, totalPriceByUserID, allUsers, allItems } = require("./queries")
-const{ addItemUser, addItem, addUser } = require("./mutations")
+const {
+  totalQuantityByItemID,
+  totalPriceByItemID,
+  totalPriceForAll,
+  totalPriceByUserID,
+  allUsers,
+  allItems,
+} = require("./queries");
+const { addItemUser, addItem, addUser, login } = require("./mutations");
 
 const resolvers = {
   Query: {
@@ -22,11 +29,11 @@ const resolvers = {
     },
 
     //Total price for User
-    totalPriceByUserID: async(_, { id }) => {
+    totalPriceByUserID: async (_, { id }) => {
       let totalPrice = null;
       let user_id = parseInt(id.id);
       const userFound = await prisma.useritem.findMany({
-        where: { user_id: user_id},
+        where: { user_id: user_id },
         select: {
           quantity: true,
           item: {
@@ -66,8 +73,13 @@ const resolvers = {
     },
     allItems: () => {
       return allItems();
-    }
+    },
+    login: (parent, args) => {
+      
+      return login(args);
+    },
   },
+
   Mutation: {
     addUser: (parent, args) => {
       return addUser(args);

@@ -12,11 +12,17 @@
   "dependencies": {
     "@prisma/client": "^3.9.1",
     "apollo-server-express": "^3.6.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "express": "^4.17.2",
+    "express-session": "^1.17.2",
     "graphql": "^16.3.0",
     "nodemon": "^2.0.15"
   },
   "devDependencies": {
     "prisma": "^3.9.1"
+  },
+  "engines": {
+    "node": "14.18.1"
   }
 }

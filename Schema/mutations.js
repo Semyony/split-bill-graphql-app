@@ -58,4 +58,21 @@ async function addItem(args) {
   }
 }
 
-module.exports = { addUser, addItemUser, addItem };
+async function login(args) {
+  const user = await prisma.user.findFirst({
+    where: {
+      first_name: args.first_name,
+      last_name: args.last_name,
+    },
+  });
+
+  if (!user) {
+    return null;
+  }
+
+  // context.req.session.userId = user.user_id;
+  // console.log(context.req.session.userId);
+  return user;
+}
+
+module.exports = { addUser, addItemUser, addItem, login };

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1cc12d58-f561-4dda-b397-275b77bdafec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/split-n-chat/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schema/Resolvers.js" beforeDir="false" afterPath="$PROJECT_DIR$/Schema/Resolvers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schema/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/Schema/mutations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schema/typeDefs.js" beforeDir="false" afterPath="$PROJECT_DIR$/Schema/typeDefs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/data/base/16384/pg_internal.init" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/data/global/pg_control" beforeDir="false" afterPath="$PROJECT_DIR$/db/data/global/pg_control" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/data/global/pg_internal.init" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/data/pg_stat_tmp/db_0.stat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/data/pg_stat_tmp/db_16384.stat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/data/pg_stat_tmp/global.stat" beforeDir="false" afterPath="$PROJECT_DIR$/db/data/pg_stat_tmp/global.stat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/data/pg_wal/000000010000000000000001" beforeDir="false" afterPath="$PROJECT_DIR$/db/data/pg_wal/000000010000000000000001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/data/postmaster.pid" beforeDir="false" afterPath="$PROJECT_DIR$/db/data/postmaster.pid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/split-n-chat/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/split-n-chat/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/split-n-chat/src/components/ExploreContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/split-n-chat/src/components/ExploreContainer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/split-n-chat/src/components/Menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/split-n-chat/src/components/Menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/split-n-chat/src/components/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/split-n-chat/src/components/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/split-n-chat/src/pages/Page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/split-n-chat/src/pages/Page.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="25scMz9xbuvfAaMcd0XQCLfAtf9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\khlav\AppData\Roaming\npm\node_modules\prettier" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="ts.external.directory.path" value="C:\Users\khlav\Desktop\bill-app\split-n-chat\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1cc12d58-f561-4dda-b397-275b77bdafec" name="Default Changelist" comment="" />
+      <created>1646319192766</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646319192766</updated>
+      <workItem from="1646319195621" duration="1587000" />
+      <workItem from="1646320979633" duration="43000" />
+      <workItem from="1646321037873" duration="2940000" />
+      <workItem from="1646324365941" duration="1388000" />
+      <workItem from="1646325784806" duration="3123000" />
+      <workItem from="1646333516777" duration="4608000" />
+      <workItem from="1646342084239" duration="4412000" />
+      <workItem from="1646407976892" duration="17755000" />
+      <workItem from="1646502612828" duration="1391000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1616" y="456" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1646325518764">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="1616" y="456" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/15.2160.1707.928/0.0.2560.1392@0.0.2560.1392" timestamp="1646325518764" />
+    <state x="1667" y="430" key="FileChooserDialogImpl" timestamp="1646324979732">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="1667" y="430" key="FileChooserDialogImpl/15.2160.1707.928/0.0.2560.1392@0.0.2560.1392" timestamp="1646324979732" />
+    <state x="1387" y="321" key="SettingsEditor" timestamp="1646325907021">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="1387" y="321" key="SettingsEditor/15.2160.1707.928/0.0.2560.1392@0.0.2560.1392" timestamp="1646325907021" />
+    <state x="802" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1646341995636">
+      <screen x="0" y="0" width="1707" height="912" />
+    </state>
+    <state x="802" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1707.912@0.0.1707.912" timestamp="1646341995636" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
