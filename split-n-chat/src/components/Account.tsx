@@ -13,12 +13,7 @@ import {
   IonCardHeader,
   IonInput,
 } from "@ionic/react";
-
-interface User {
-  id: number;
-  first_name: string;
-  last_name: string;
-}
+import { User } from '../types/User';
 
 type Props = {
   user: User;

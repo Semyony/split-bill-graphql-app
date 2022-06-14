@@ -16,14 +16,11 @@ import Bill from "../components/Bill";
 import Users from "../components/Users";
 import Login from "../components/Login";
 import Account from "../components/Account";
+import Chat from "../components/Chat";
 import Header from "../components/Header";
 import React, { useState, useEffect } from "react";
 
-interface User {
-  id: number;
-  first_name: string;
-  last_name: string;
-}
+import { User } from '../types/User';
 
 type Props = {
   user: User;
@@ -34,7 +31,7 @@ const Page: React.FC<Props> = ({ user }: Props) => {
 
   return (
     <IonPage>
-      <Header user={user}/>
+      <Header user={user} />
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
@@ -48,7 +45,10 @@ const Page: React.FC<Props> = ({ user }: Props) => {
           <Users />
         </Route>
         <Route path="/account" exact={true}>
-          <Account user={user}/>
+          <Account user={user} />
+        </Route>
+        <Route path="/chat" exact={true}>
+          <Chat user={user} />
         </Route>
       </IonContent>
     </IonPage>

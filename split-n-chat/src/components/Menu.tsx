@@ -22,6 +22,7 @@ import {
 import "./Menu.css";
 import logo from "../images/logo.png";
 import Login from "./Login";
+import { User } from '../types/User';
 
 interface AppPage {
   url: string;
@@ -57,11 +58,6 @@ type Props = {
   user: User;
 };
 
-interface User {
-  id: number;
-  first_name: string;
-  last_name: string;
-}
 
 export const Menu: React.FC<Props> = ({ user, setUser }: Props) => {
   const location = useLocation();

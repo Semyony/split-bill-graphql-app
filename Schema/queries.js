@@ -14,10 +14,8 @@ async function totalQuantityByItemID(id) {
   });
   return totalQuantity;
 }
-
 async function allUsers() {
   const allUsers = await prisma.user.findMany();
-  console.log(allUsers);
   for(let i = 0 ; i < allUsers.length; i++) {
     const itemsForUser = await prisma.useritem.findMany({
       where : {

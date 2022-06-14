@@ -32,6 +32,13 @@ const typeDefs = gql`
     total_items: [TotalItem]
   }
 
+  type Message { 
+    message_id:  ID!
+    user_id:  ID!
+    first_name: String!
+    message: String!
+  }
+
   input userid {
     id: ID
   }
@@ -46,12 +53,19 @@ const typeDefs = gql`
     allUsers: [UserItems!]!
     allItems: [TotalItem!]!
     login(first_name: String!, last_name: String!): User
+    getMessages: [Message]
+    getUser(user_id: Int!): User
   }
 
   type Mutation {
     addUser(first_name: String!, last_name: String!): Boolean!
     addItemUser(user_id: Int!, item_id: Int!, quantity: Int!): Boolean!
     addItem(title: String!, price: Float!): Boolean!
+    sendMessage(message: String!, user_id: Int!, first_name: String!): Boolean!
+  }
+
+  type Subscription {
+    MessageAdded: Message
   }
 `;
 

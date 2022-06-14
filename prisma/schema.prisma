@@ -19,7 +19,8 @@ model user {
   first_name String     @db.VarChar(50)
   last_name  String     @db.VarChar(50)
   useritem   useritem[]
-
+  message    message[]
+  
   @@unique([first_name, last_name], map: "accounts_first_name_last_name_key")
 }
 
@@ -31,4 +32,12 @@ model useritem {
   user     user    @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
 
   @@id([item_id, user_id])
+}
+
+model message {
+  message_id  Int @id(map: "accounts_pkey2") @default(autoincrement())
+  user_id  Int
+  message String @db.VarChar(1000)
+  user     user    @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+
 }

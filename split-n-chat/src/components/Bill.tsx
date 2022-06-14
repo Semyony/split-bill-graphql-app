@@ -4,15 +4,9 @@ import {
   IonCard,
   IonCardHeader,
   IonCardTitle,
-  IonCardSubtitle,
   IonGrid,
   IonRow,
-  IonCol,
   IonCardContent,
-  IonItem,
-  IonIcon,
-  IonLabel,
-  IonButton,
   IonLoading,
 } from "@ionic/react";
 
@@ -32,7 +26,7 @@ const Bill: React.FC = () => {
   const { data, loading, error } = useQuery(getAllItems);
   console.log(data);
   const [items, setItems] = useState<Item[]>([]);
-  const [price, setPrice] = useState([]);
+  const [price, setPrice] = useState(0.0);
   const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
@@ -82,7 +76,7 @@ const Bill: React.FC = () => {
           <IonCardHeader>
             <span>Total</span>
             <IonCardContent class="totalPrice">
-              <div>${price}</div>
+              <div>${price.toFixed(2)}</div>
             </IonCardContent>
           </IonCardHeader>
         </IonCard>

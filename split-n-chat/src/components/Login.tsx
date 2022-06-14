@@ -16,16 +16,12 @@ import {
 import { useQuery } from "@apollo/client";
 import { login } from "../query/login";
 import Bill from "./Bill";
+import { User } from '../types/User';
 
 type Props = {
   setUser: (user: User) => void;
 };
 
-interface User {
-  id: number;
-  first_name: string;
-  last_name: string;
-}
 
 export const Login: React.FC<Props> = ({ setUser }: Props) => {
   const [firstName, setFirstName] = useState("");
@@ -38,6 +34,7 @@ export const Login: React.FC<Props> = ({ setUser }: Props) => {
   
   const [errorOcc, setErrorOcc] = useState<boolean>(false);
   const [errMessage, setErrMessage] = useState<string>("");
+
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -68,7 +65,8 @@ export const Login: React.FC<Props> = ({ setUser }: Props) => {
           <IonCardHeader>{errMessage}</IonCardHeader>
         </IonCard>
       )}
-      <form onSubmit={handleSubmit}>
+
+      <form className="validation-form" onSubmit={handleSubmit}>
         <IonCard className="input firstInput">
           <IonInput
             type="text"

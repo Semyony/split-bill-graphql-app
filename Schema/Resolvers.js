@@ -1,6 +1,8 @@
 const { itemUser, item, user } = require("../data");
 const { PrismaClient } = require("@prisma/client");
+const { PubSub } = require("graphql-subscriptions");
 
+const pubsub = new PubSub();
 const prisma = new PrismaClient();
 
 const {
@@ -12,6 +14,8 @@ const {
   allItems,
 } = require("./queries");
 const { addItemUser, addItem, addUser, login } = require("./mutations");
+
+let chat = [];
 
 const resolvers = {
   Query: {
@@ -75,9 +79,18 @@ const resolvers = {
       return allItems();
     },
     login: (parent, args) => {
-      
       return login(args);
     },
+    getMessages: () => {
+      return chat;
+    },
+    getUser: async (_, {user_id}) => {
+      return await prisma.user.findUnique({
+        where: {
+          user_id: user_id
+        }
+      });
+    }
   },
 
   Mutation: {
@@ -89,6 +102,27 @@ const resolvers = {
     },
     addItem: (parent, args) => {
       return addItem(args);
+    },
+    sendMessage: async (root, { user_id, message, first_name }) =>  {
+
+      const messages = {
+        message_id: chat.length + 1,
+        user_id: user_id,
+        first_name: first_name,
+        message: message,
+      };
+      chat.push(messages);
+
+      console.log(chat);
+      pubsub.publish("CHAT_CHANNEL", { MessageAdded: messages });
+
+      return true;
+    },
+  },
+
+  Subscription: {
+    MessageAdded: {
+      subscribe: () => pubsub.asyncIterator(["CHAT_CHANNEL"]),
     },
   },
 };

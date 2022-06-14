@@ -4,34 +4,17 @@ const session = require("express-session");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
+const { createServer } = require('http');
 const { ApolloServer } = require("apollo-server-express");
+const { makeExecutableSchema } = require('@graphql-tools/schema');
+const { WebSocketServer } = require('ws');
+const { useServer } = require('graphql-ws/lib/use/ws');
+const { ApolloServerPluginDrainHttpServer } = require("apollo-server-core");
 
 const { typeDefs } = require("./Schema/typeDefs");
 const { resolvers } = require("./Schema/Resolvers");
 
 const PORT = process.env.PORT || 8000;
-
-// var corsOptions = {
-//   origin: "http://localhost:8100",
-//   credentials: true, // <-- REQUIRED backend setting
-// };
-//
-
-app.use(cookieParser());
-
-app.use(
-  session({
-    name: "qid",
-    secret: "gerg43r",
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      secure: false,
-      maxAge: 1000 * 60 * 60 * 24,
-      httpOnly: true,
-    },
-  })
-);
 
 const corsOptions = {
   credentials: true,
@@ -40,16 +23,42 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 
-async function startServer() {
-  const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-    context: ({ req }) => ({ req }),
-  });
-  await server.start();
-  server.applyMiddleware({ app, cors: corsOptions });
+const schema = makeExecutableSchema({ typeDefs, resolvers });
+const ttpServer = createServer(app);
 
-  app.listen(PORT, () => {
+async function startServer() {
+  
+  const httpServer = createServer(app);
+
+  const server = new ApolloServer({
+    schema,
+    csrfPrevention: true,
+    plugins: [
+      ApolloServerPluginDrainHttpServer({ httpServer }),
+      {
+        async serverWillStart() {
+          return {
+            async drainServer() {
+              await serverCleanup.dispose();
+            },
+          };
+        },
+      },
+    ],
+  });
+
+  const wsServer = new WebSocketServer({
+    server: httpServer,
+    path: '/graphql',
+  });
+
+  const serverCleanup = useServer({ schema }, wsServer);
+
+  await server.start();
+
+  server.applyMiddleware({ app, cors: false });
+
+  httpServer.listen(PORT, () => {
     console.log(`Server on PORT ${PORT}`);
     console.log(`qraphql path is ${server.graphqlPath}`);
   });

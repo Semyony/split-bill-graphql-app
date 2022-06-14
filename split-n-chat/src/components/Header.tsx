@@ -19,28 +19,26 @@ import {
   IonHeader,
 } from "@ionic/react";
 import { useParams } from "react-router";
-
+import { User } from '../types/User';
 
 type Props = {
   user: User;
 };
 
-interface User {
-  id: number;
-  first_name: string;
-  last_name: string;
-}
-
 const Header: React.FC<Props> = ({ user }: Props) => {
   const { name } = useParams<{ name: string }>();
-  const [fullName, setFullName] = useState(user.first_name + " " + user.last_name);
+  const [fullName, setFullName] = useState(
+    user.first_name + " " + user.last_name
+  );
   return (
     <IonHeader>
       <IonToolbar class="toolbar">
         <IonButtons slot="start">
           <IonMenuButton />
         </IonButtons>
-        <IonTitle>{(name === "Account" || name === "account" )? fullName: name}</IonTitle>
+        <IonTitle>
+          {name === "Account" || name === "account" ? fullName : name}
+        </IonTitle>
       </IonToolbar>
     </IonHeader>
   );
