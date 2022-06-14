@@ -13,15 +13,15 @@ import {
   IonCardHeader,
   IonInput,
 } from "@ionic/react";
+import "./login.css";
 import { useQuery } from "@apollo/client";
 import { login } from "../query/login";
 import Bill from "./Bill";
-import { User } from '../types/User';
+import { User } from "../types/User";
 
 type Props = {
   setUser: (user: User) => void;
 };
-
 
 export const Login: React.FC<Props> = ({ setUser }: Props) => {
   const [firstName, setFirstName] = useState("");
@@ -31,17 +31,14 @@ export const Login: React.FC<Props> = ({ setUser }: Props) => {
     variables: { first_name: firstName, last_name: lastName },
   });
 
-  
   const [errorOcc, setErrorOcc] = useState<boolean>(false);
   const [errMessage, setErrMessage] = useState<string>("");
 
-
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    if (firstName && lastName) {
+    if (firstName !== "" && lastName !== "") {
       try {
-        console.log(data.login);
-        if (data.login) {
+        if (error) {
           setErrorOcc(false);
           setUser(data.login);
           localStorage.setItem("user", JSON.stringify(data.login));
@@ -59,15 +56,15 @@ export const Login: React.FC<Props> = ({ setUser }: Props) => {
   };
 
   return (
-    <div className="">
-      {errorOcc && (
-        <IonCard>
-          <IonCardHeader>{errMessage}</IonCardHeader>
-        </IonCard>
-      )}
-
+    <div>
       <form className="validation-form" onSubmit={handleSubmit}>
-        <IonCard className="input firstInput">
+        <div className="headerLogin">LOGIN</div>
+        {errorOcc && (
+          <IonCard color="warning">
+            <IonCardHeader>{errMessage}</IonCardHeader>
+          </IonCard>
+        )}
+        <IonCard className="firstInput">
           <IonInput
             type="text"
             value={firstName}
@@ -75,7 +72,7 @@ export const Login: React.FC<Props> = ({ setUser }: Props) => {
             onIonChange={(e) => setFirstName(e.detail.value!)}
           ></IonInput>
         </IonCard>
-        <IonCard className="input lastInput">
+        <IonCard className="lastInput">
           <IonInput
             type="text"
             value={lastName}
